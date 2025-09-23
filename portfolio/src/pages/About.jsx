@@ -5,8 +5,6 @@ export const About = () => {
   return (
     <section id="about" className="scroll-mt-20">
           <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
-            {/* Add StarBackground */}
-      <StarBackground />
       {/* Section Title */}   
       <h2 className="text-3xl font-bold mb-6 text-glow">About Me</h2>
 
