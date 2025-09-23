@@ -10,7 +10,7 @@ import React from "react";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ict2233-ca-02-sanathmi21/">
       <div className="relative min-h-screen">
         {/* Global background */}
         <StarBackground />

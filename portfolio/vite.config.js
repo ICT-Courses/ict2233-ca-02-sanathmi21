@@ -5,10 +5,11 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/ict2233-ca-02-sanathmi21/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),   
+      '@': path.resolve(__dirname, './src'),
     },
   },
 })
