@@ -42,7 +42,7 @@ export const Projects = () => {
     <section id="projects">
 
   <div className="min-h-screen bg-background text-foreground relative pt-20 z-10">
-    <h2 className="text-3xl font-bold mb-10 text-center text-glow">Projects</h2>
+    <h2 className="text-3xl font-bold mb-10 text-center text-glow">My Projects</h2>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto">
       {projects.slice(0, visibleCount).map((project) => (

@@ -1,22 +1,36 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {Home} from "./pages/Home";
+import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
 import { Contact } from "./pages/Contact";
+import { StarBackground } from "./components/StarBackground";
 import "./index.css";
 import React from "react";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <About/>
-      <Projects/>
-      <Contact/>
+      <div className="relative min-h-screen">
+        {/* Global background */}
+        <StarBackground />
+
+        {/* All content */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <About />
+                <Projects />
+                <Contact />
+              </>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
