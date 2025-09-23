@@ -29,13 +29,20 @@ export const Contact = () => {
 
     setError("");
     alert("Form submitted! (You can connect with Sanathmi.)");
+
+    // Reset form fields
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact">
-      <div className="min-h-screen bg-background text-foreground overflow-x-hidden overflow-x-hidden relative">
-        <h2 className="text-3xl font-bold mb-6 text-glow text-center">Contact Me</h2>
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto flex flex-col gap-4">
+    <section id="contact" className="scroll-mt-20">
+      <div className="min-h-screen bg-background text-foreground flex flex-col justify-center items-center text-center px-4 relative">
+        <h2 className="text-3xl font-bold mb-6 text-glow">Contact Me</h2>
+
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-lg flex flex-col gap-4"
+        >
           <input
             type="text"
             name="name"
@@ -60,18 +67,35 @@ export const Contact = () => {
             onChange={handleChange}
           />
           {error && <p className="text-red-500">{error}</p>}
-          <button type="submit" className="cosmic-button">Send</button>
+          <button type="submit" className="cosmic-button">
+            Send
+          </button>
         </form>
 
         <div className="flex gap-6 mt-6 justify-center">
-          <a href="https://www.linkedin.com/in/sanathmi-sanupama" target="_blank">
-            <img src="/images/linkedin.png" alt="LinkedIn" className="w-8 h-8 hover:opacity-80" />
+          <a
+            href="https://www.linkedin.com/in/sanathmi-sanupama"
+            target="_blank"
+          >
+            <img
+              src="/images/linkedin.png"
+              alt="LinkedIn"
+              className="w-8 h-8 hover:opacity-80"
+            />
           </a>
           <a href="https://github.com/sanathmi21" target="_blank">
-            <img src="/images/github.png" alt="GitHub" className="w-8 h-8 hover:opacity-80" />
+            <img
+              src="/images/github.png"
+              alt="GitHub"
+              className="w-8 h-8 hover:opacity-80"
+            />
           </a>
           <a href="mailto:sana.sanupama2003@gmail.com">
-            <img src="/images/email.png" alt="Email" className="w-8 h-8 hover:opacity-80" />
+            <img
+              src="/images/email.png"
+              alt="Email"
+              className="w-8 h-8 hover:opacity-80"
+            />
           </a>
         </div>
       </div>

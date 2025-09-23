@@ -1,24 +1,22 @@
-// About.jsx
+import { useEffect, useState } from "react";
+import { StarBackground } from "../components/StarBackground";
+
 export const About = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground pt-24 container">
-      {/* Section Title */}
-      <h2 className="text-4xl font-bold mb-12 text-glow text-center">
-        About Me
-      </h2>
+    <section id="about" className="scroll-mt-20">
+          <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+            {/* Add StarBackground */}
+      <StarBackground />
+      {/* Section Title */}   
+      <h2 className="text-3xl font-bold mb-6 text-glow">About Me</h2>
 
-      {/* Profile + Intro */}
+      {/* Intro */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
-        <img
-          src="/profile.jpg"
-          alt="Sana"
-          className="w-48 h-48 rounded-full border-4 border-primary shadow-lg"
-        />
         <div className="flex-1">
           <p className="mb-4 text-lg leading-relaxed">
             Hello! I’m <strong>Sanathmi Sanupama De Alwis</strong>, a passionate university student 
             exploring the intersection of   
-            <strong> Information Technology</strong>. 
+            <strong> Information Technology</strong>. <br/>
             I enjoy building desktop applications using C# and MySQL, 
             web applications with JavaScript, React, CSS, and Firebase, 
             and designing intuitive UI/UX interfaces in Figma.
@@ -52,7 +50,7 @@ export const About = () => {
   <div className="p-6 rounded-lg bg-card shadow-lg hover:shadow-xl transition-shadow duration-300">
     <h3 className="text-2xl font-semibold mb-4 text-primary">Technical Skills</h3>
     <div className="flex flex-wrap gap-3">
-      {["C#", "Python", "CSS", "JavaScript", ".NET", "HTML", "MySQL", "React", "Express.js", "Node.js"].map((skill) => (
+      {["C#", "Python", "JavaScript", "HTML", "CSS", "MySQL", ".NET", "React", "Express.js", "Node.js", "Firebase"].map((skill) => (
         <span
           key={skill}
           className="px-4 py-2 bg-primary/20 text-white font-medium rounded-full text-sm hover:bg-primary/40 transition-colors duration-300"
@@ -81,6 +79,7 @@ export const About = () => {
 </div>
 
     </div>
+    </section>
   );
 };
 

@@ -40,45 +40,44 @@ export const Projects = () => {
 
   return (
     <section id="projects">
-      <div className="min-h-screen bg-background text-foreground relative pt-20">
-        <h2 className="text-3xl font-bold mb-10 text-center text-glow">Projects</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto">
-          {projects.slice(0, visibleCount).map((project) => (
-            <div
-              key={project.id}
-              className="p-6 rounded-lg bg-card shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2"
-            >
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-              <p className="text-sm mb-4 text-muted-foreground">{project.description}</p>
-              <a
-                href={project.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cosmic-button"
-              >
-                View Repo
-              </a>
-            </div>
-          ))}
+  <div className="min-h-screen bg-background text-foreground relative pt-20 z-10">
+    <h2 className="text-3xl font-bold mb-10 text-center text-glow">Projects</h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto">
+      {projects.slice(0, visibleCount).map((project) => (
+        <div
+          key={project.id}
+          className="p-6 rounded-lg bg-card shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2"
+        >
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-40 object-cover rounded mb-4"
+          />
+          <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+          <p className="text-sm mb-4 text-muted-foreground">{project.description}</p>
+          <a
+            href={project.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cosmic-button"
+          >
+            View Repo
+          </a>
         </div>
+      ))}
+    </div>
 
-        {visibleCount < projects.length && (
-          <div className="text-center mt-8">
-            <button
-              onClick={handleSeeMore}
-              className="cosmic-button px-6 py-2"
-            >
-              See More Projects
-            </button>
-          </div>
-        )}
+    {visibleCount < projects.length && (
+      <div className="text-center mt-8">
+        <button onClick={handleSeeMore} className="cosmic-button px-6 py-2">
+          See More Projects
+        </button>
       </div>
-    </section>
+    )}
+  </div>
+</section>
+
   );
 };
