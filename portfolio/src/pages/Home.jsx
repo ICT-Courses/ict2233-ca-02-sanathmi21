@@ -12,7 +12,7 @@ export const Home = () => {
         {/* Hero Section */}
         <section className="flex flex-col justify-center items-center text-center min-h-screen relative z-20">
           <img
-            src="/profile.jpg"
+            src="images/profile.jpg"
             alt="Sanathmi"
             className="w-65 h-65 rounded-full mb-6 border-4 border-primary shadow-lg animate-fade-in relative z-30"
           />
@@ -23,9 +23,27 @@ export const Home = () => {
             <span className="inline-block animate-fade-in-delayed-2">Aspiring IT Enthusiast | Building creative digital experiences</span>
           </p>
           <div className="flex gap-4 animate-fade-in-delayed-4 relative z-30">
-            <a href="/#projects" className="cosmic-button hover:animate-pulse">View Projects</a>
-            <a href="/#contact" className="cosmic-button hover:animate-pulse">Contact Me</a>
-          </div>
+  <button
+    className="cosmic-button hover:animate-pulse"
+    onClick={() => {
+      const section = document.getElementById("projects");
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    }}
+  >
+    View Projects
+  </button>
+
+  <button
+    className="cosmic-button hover:animate-pulse"
+    onClick={() => {
+      const section = document.getElementById("contact");
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    }}
+  >
+    Contact Me
+  </button>
+</div>
+
         </section>
       </div>
     </section>

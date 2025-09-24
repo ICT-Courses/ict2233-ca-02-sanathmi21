@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"; 
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 export const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -64,7 +64,7 @@ export const Navbar = () => {
             <a
               key={section}
               href={`#${section}`}
-              onClick={() => setIsMobileMenuOpen(false)} // close menu on click
+              onClick={() => setIsMobileMenuOpen(false)} 
               className={`transition-colors duration-300 ${
                 activeSection === section ? "text-primary" : "text-foreground"
               } hover:text-primary`}

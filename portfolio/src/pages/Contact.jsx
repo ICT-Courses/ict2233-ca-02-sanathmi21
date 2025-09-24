@@ -82,13 +82,13 @@ export const Contact = () => {
 
           <div className="flex gap-6 mt-6 justify-center relative z-20">
             <a
-              href="https://www.linkedin.com/in/sanathmi-sanupama"
+              href="https://www.linkedin.com/in/sanathmi-sanupama-210b34313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-30"
             >
               <img
-                src="/images/linkedin.png"
+                src={`${import.meta.env.BASE_URL}images/linkedin.png`}
                 alt="LinkedIn"
                 className="w-8 h-8 hover:opacity-80 transition-opacity duration-300"
               />
@@ -100,7 +100,7 @@ export const Contact = () => {
               className="relative z-30"
             >
               <img
-                src="/images/github.png"
+                src={`${import.meta.env.BASE_URL}images/github.png`}
                 alt="GitHub"
                 className="w-8 h-8 hover:opacity-80 transition-opacity duration-300"
               />
@@ -110,7 +110,7 @@ export const Contact = () => {
               className="relative z-30"
             >
               <img
-                src="/images/email.png"
+                src={`${import.meta.env.BASE_URL}images/email.png`}
                 alt="Email"
                 className="w-8 h-8 hover:opacity-80 transition-opacity duration-300"
               />
