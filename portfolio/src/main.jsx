@@ -6,7 +6,7 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/ict2233-ca-02-sanathmi21/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>,
