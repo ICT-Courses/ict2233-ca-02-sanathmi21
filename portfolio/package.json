@@ -1,7 +1,6 @@
 {
   "name": "portfolio",
   "private": true,
-  "homepage": "https://ict-courses.github.io/ict2233-ca-02-sanathmi21/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -13,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-toast": "^1.2.15",
     "@tailwindcss/vite": "^4.1.13",
     "class-variance-authority": "^0.7.1",
