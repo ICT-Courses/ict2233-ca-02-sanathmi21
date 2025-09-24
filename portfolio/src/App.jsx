@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { About } from "./pages/About";
@@ -10,7 +10,7 @@ import React from "react";
 
 const App = () => {
   return (
-    <BrowserRouter basename="/ict2233-ca-02-sanathmi21/">
+    <Router>
       <div className="relative min-h-screen">
         {/* Global background */}
         <StarBackground />
@@ -31,7 +31,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 };
 
