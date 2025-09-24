@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { StarBackground } from "../components/StarBackground";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -10,30 +11,49 @@ export const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Name cannot be numbers
-    if (!form.name || /\d/.test(form.name)) {
-      setError("Please enter a valid name (letters only)!");
-      return;
-    }
+  if (!form.name || /\d/.test(form.name)) {
+    setError("Please enter a valid name (letters only)!");
+    return;
+  }
 
-    if (!form.email || !/\S+@\S+\.\S+/.test(form.email)) {
-      setError("Please enter a valid email.");
-      return;
-    }
+  if (!form.email || !/\S+@\S+\.\S+/.test(form.email)) {
+    setError("Please enter a valid email.");
+    return;
+  }
 
-    if (!form.message) {
-      setError("Message cannot be empty!");
-      return;
-    }
+  if (!form.message) {
+    setError("Message cannot be empty!");
+    return;
+  }
 
-    setError("");
-    alert("Form submitted! (You can connect with Sanathmi.)");
+  setError("");
 
-    // Reset form fields
-    setForm({ name: "", email: "", message: "" });
-  };
+  //Send email with EmailJS
+  emailjs
+    .send(
+      "service_9uxyk4s",
+      "template_614c42m",
+      {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      },
+      "mcrRVmOKvbMCz0KyJ"    
+    )
+    .then(
+      (result) => {
+        console.log("SUCCESS!", result.text);
+        alert("Message sent successfully!");
+        setForm({ name: "", email: "", message: "" }); 
+      },
+      (error) => {
+        console.log("FAILED...", error.text);
+        setError("Failed to send message. Please try again later.");
+      }
+    );
+};
 
   return (
     <section id="contact" className="scroll-mt-20">
